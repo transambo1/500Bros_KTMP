@@ -26,6 +26,11 @@ export default function Home() {
             img: "/Images/Logo.png",
             desc: "Bảo vệ nhân viên và tài sản doanh nghiệp của bạn.",
         },
+        {
+            name: "Bảo hiểm Du lịch",
+            img: "/Images/Logo.png",
+            desc: "Đảm bảo chuyến du lịch của bạn luôn vui vẻ và an tâm.",
+        },
     ];
 
     return (
