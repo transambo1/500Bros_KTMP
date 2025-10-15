@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  width: 1630px;
+  width: 100%;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -31,9 +31,11 @@ body {
 .header-right {
   display: flex;
   color: #fcb32c;
+  margin-right: 10px;
 }
 
 .footer {
+  width: 100%;
   background-color: #2b2623;
   color: white;
   padding: 40px 40px;
@@ -550,15 +552,6 @@ main {
 /* ================================== */
 
 /* --- Main Header Container --- */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  background-color: #2b2623;
-  color: #fcb32c;
-  border-bottom: 3px solid #fcb32c;
-}
 
 .header-left {
   height: 40px;

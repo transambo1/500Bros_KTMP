@@ -31,7 +31,6 @@ function Header({ cartCount, currentUser, setCurrentUser }) {
             </div>
 
             <div className="header-right">
-
                 <div><button onClick={() => navigate("/")}>Trang chủ</button></div>
                 <div
                     className="menu-dropdown"
@@ -66,14 +65,17 @@ function Header({ cartCount, currentUser, setCurrentUser }) {
                         <button onClick={() => navigate("/claim-list")}>
                             Quản lý bồi thường
                         </button>
+
                         <button onClick={() => navigate("/seller-orders")}>
                             Quản lý hợp đồng
                         </button>
+
                         <button onClick={() => navigate("/manage-products")}>
                             Quản lí bảo hiểm
                         </button>
                     </div>
-                )}
+                )
+                }
 
                 <div className="user-actions">
                     {currentUser ? (
@@ -136,8 +138,8 @@ function Header({ cartCount, currentUser, setCurrentUser }) {
                         <Link to="/Login">Đăng nhập</Link>
                     )}
                 </div>
-            </div>
-        </header>
+            </div >
+        </header >
     );
 }
 

@@ -65,7 +65,7 @@ function SellerOrders() {
                                 <td>
                                     {order.items.map((item, index) => (
                                         <div key={index}>
-                                            {Number(item.claim).toLocaleString()}đ
+                                            {Number(item.totalclaim).toLocaleString()}đ
                                         </div>
                                     ))}
                                 </td>
