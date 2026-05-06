@@ -30,6 +30,7 @@ import AdminClaims from "./modules/admin/AdminClaims";
 import { useAuth } from "./modules/auth/hook/useAuth";
 
 import "./App.css";
+import PaymentPay from "./modules/payment/PaymentPay.jsx";
 
 function App() {
   const { currentUser } = useAuth();
@@ -132,6 +133,7 @@ function App() {
           <Route path="/ApplicationForm" element={<ApplicationForm />} />
           <Route path="/application/:id" element={<ApplicationDetail />} />
           <Route path="/payment/:applicationId" element={<PaymentPage />} />
+          <Route path="/payment/pay/:applicationId" element={<PaymentPay />} />
           <Route path="/payment/result" element={<PaymentResult />} />
 
           <Route path="/order-history" element={<OrderHistory />} />

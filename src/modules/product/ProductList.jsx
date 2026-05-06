@@ -145,7 +145,7 @@ export default function ProductList() {
                             className="product-card-new"
                             onClick={() => navigate(`/Product-Detail/${p.id}`)}
                         >
-                            <div className="product-thumb">🛡️</div>
+                            <img src="https://picsum.photos/200" className="product-thumb" />
 
                             <div className="product-info">
                                 <div className="product-title">{p.name}</div>
