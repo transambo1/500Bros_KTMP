@@ -78,7 +78,7 @@ export default function PaymentPay() {
             navigate(`/application/${app.id}`); // Quay lại trang chi tiết để xem trạng thái mới
         } catch (err) {
             console.error("Lỗi xác nhận:", err);
-            alert("Có lỗi xảy ra khi xác nhận thanh toán!");
+            alert("Có lỗi xảy ra khi xác nhận thanh toán!!");
         } finally {
             setLoading(false);
         }
