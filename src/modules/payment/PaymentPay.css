@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-bg: #fafafa;
+    --border-color: #f0f0f0;
+    --text-main: #333;
+    --text-muted: #666;
+    --border-radius: 12px;
+}
+
+.payment-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.payment-header h2 {
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.payment-header p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* GRID & CARDS */
+.payment-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 30px; /* Khoảng cách giữa 2 khối */
+    background: transparent; /* Xóa nền của thẻ cha */
+    border: none; /* Xóa viền của thẻ cha */
+    box-shadow: none; /* Xóa đổ bóng của thẻ cha */
+    overflow: visible; /* Cho phép đổ bóng của thẻ con hiển thị */
+}
+.payment-card {
+    flex: 1; /* Chia đều 50-50 */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+
+    /* Đưa trang trí vào đây */
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+/* 3. Tinh chỉnh riêng cho từng bên nếu cần */
+.summary-card {
+    /* Xóa cái border-right cũ vì giờ đã tách rời */
+    border-right: 1px solid var(--border-color);
+    /* Nếu muốn bên trái nhấn nhá màu khác thì giữ background-color */
+    background-color: var(--secondary-bg);
+}
+.payment-card h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* INFO ROWS & CONTROLS */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.info-row .label {
+    color: var(--text-muted);
+    font-weight: 500;
+    flex: 0 0 150px; /* Độ rộng cố định cho label để các input thẳng hàng */
+    font-size: 14px;
+}
+
+.info-row .value {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 260px; /* Giới hạn độ rộng input để không bị bể */
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* BANK SPECIFIC */
+.bank-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed #b8d4fe;
+    margin-top: 10px;
+}
+
+.account-owner {
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.placeholder-text {
+    color: #ccc;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.money {
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.highlight {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.transfer-content {
+    background: #f1f3f5;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    color: #495057;
+}
+
+.payment-note {
+    margin-top: auto; /* Đẩy xuống đáy card */
+    padding-top: 20px;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* ACTIONS (BUTTONS) */
+.payment-actions {
+    display: flex;
+    justify-content: center; /* Căn giữa cụm nút */
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa 2 nút */
+    margin-top: 30px;
+}
+
+.btn-secondary, .btn-primary {
+    padding: 12px 28px;
+    border-radius: 50px; /* Nút bo tròn kiểu hiện đại */
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-secondary {
+    background-color: #eee;
+    color: #555;
+    min-width: 120px;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e2e2;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:disabled {
+    background-color: #c0d8f0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .payment-grid {
+        flex-direction: column;
+    }
+
+    .summary-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-row .label {
+        flex: none;
+        margin-bottom: 5px;
+    }
+
+    .info-row .value {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .form-control {
+        max-width: 100%;
+    }
+
+    .payment-actions {
+        flex-direction: column-reverse; /* Nút quay lại nằm dưới nút chính trên mobile */
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}

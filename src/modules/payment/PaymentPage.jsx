@@ -40,25 +40,40 @@ export default function PaymentPage() {
     [application?.status]
   );
 
-  const startPayment = async () => {
-    if (!application) return;
-    setError("");
-    setPaying(true);
-    try {
-      const res = await paymentApi.create(application.id, "VNPAY");
-      const url = res.data?.data?.paymentUrl;
+    const startPayment = async () => {
+        if (!application) return;
+        setPaying(true);
+        try {
+            // 1. Vẫn gọi BE để tạo Payment trong Database
+            const res = await paymentApi.create(application.id, "ZALOPAY");
 
-      if (!url) throw new Error("Không nhận được link thanh toán");
+            // Giả sử BE trả về: http://localhost:5173/payment/pay/10001
+            const url = res.data?.data?.paymentUrl;
+            const amountFromBE = res.data?.data?.amount;
+            const userNameFromBE = res.data?.data?.userName;
 
-      localStorage.setItem("current_payment_id", application.id);
-      window.location.href = url;
-    } catch (err) {
-      const msg = err.response?.data?.message || err.message || "Thanh toán thất bại.";
-      setError(msg);
-    } finally {
-      setPaying(false);
-    }
-  };
+            if (!url) throw new Error("Không nhận được link");
+
+            // 2. Tách lấy cái ID cuối cùng của URL (là 10001)
+            const mockPaymentId = url.split("/").pop();
+
+            // 3. ĐÂY LÀ CHỖ QUAN TRỌNG NHẤT:
+            // Thay vì window.location.href, ta dùng navigate để truyền "state"
+            navigate(`/payment/pay/${mockPaymentId}`, {
+                state: {
+                    app: application,           // Truyền object hồ sơ sang
+                    applicant: userNameFromBE,     // Truyền thông tin user sang
+                    paymentId: mockPaymentId,    // Truyền ID thanh toán sang
+                    amount: amountFromBE        // Truyền số tiền sang
+                }
+            });
+
+        } catch (err) {
+            setError("Thanh toán thất bại.");
+        } finally {
+            setPaying(false);
+        }
+    };
 
   if (loading) return (
     <div className="pay-container">

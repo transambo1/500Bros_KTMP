@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <div className="home-container">
-            <Banner images={["/Images/1.jpg", "/Images/2.jpg"]} />
+            <Banner images={["https://picsum.photos/seed/picsum/200/300", "https://picsum.photos/200/300?grayscale"]} />
 
             <section className="category-section">
                 <h2 className="section-title">Danh mục bảo hiểm phổ biến</h2>
@@ -36,7 +36,7 @@ export default function Home() {
                             key={cat.id}
                             className="category-card shadow-soft"
                         >
-                            <img src="/Images/Logo.png" className="category-img" />
+                            <img src="https://picsum.photos/200" className="category-img" />
 
                             <div className="card-content">
                                 <h3>{cat.name}</h3>
