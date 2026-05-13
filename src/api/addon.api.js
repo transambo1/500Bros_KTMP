@@ -1,4 +1,4 @@
-import api from "./axiosClient";
+import api from "./axiosClient"; 
 
 export const addonApi = {
     getByProduct: (productId) =>
